@@ -29,15 +29,15 @@ chmod +x build.sh
 build.sh is used on linux to set environmental variables, compile the app and run the app.
 app.yaml is used by app engine to do the same. Set environmental variables and run the app.
 
-LDAP_BIND_USERNAME: Username from G Suite LDAP client creation.
-LDAP_BIND_PASSWORD: Password from G Suite LDAP client creation.
-LDAP_DC: Your domain. example: "dc=foo,dc=com" for foo.com
-CRT_FILENAME: crt file from G Suite LDAP client creation.
-KEY_FILENAME: key file from G Suite LDAP client creation.
-LDAP_SERVER: "ldap.google.com"
-LDAP_PORT: "636"
-RADIUS_SECRET: A key file from G Suite LDAP client creation.
-DEBUG: "false" is default. set to "true" if you want verbose logging. You don't want verbose logging.
+LDAP_BIND_USERNAME - Username from G Suite LDAP client creation.
+LDAP_BIND_PASSWORD - Password from G Suite LDAP client creation.
+LDAP_DC - Your domain. example: "dc=foo,dc=com" for foo.com
+CRT_FILENAME - crt file from G Suite LDAP client creation.
+KEY_FILENAME - key file from G Suite LDAP client creation.
+LDAP_SERVER - "ldap.google.com"
+LDAP_PORT - "636"
+RADIUS_SECRET - A key file from G Suite LDAP client creation.
+DEBUG - "false" is default. set to "true" if you want verbose logging. You don't want verbose logging.
 
 7. Security, Firewall, Etc.
 
