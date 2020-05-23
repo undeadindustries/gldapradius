@@ -20,10 +20,12 @@ go get layeh.com/radius
 cp app.example.yaml app.yaml
 cp build.example.sh
 
-4. Make build.sh executable
+4. Copy the .crt and .key file you got from Google while adding the LDAP client.
+
+5. Make build.sh executable
 chmod +x build.sh
 
-5. Edit build.sh and app.yaml
+6. Edit build.sh and app.yaml
 build.sh is used on linux to set environmental variables, compile the app and run the app.
 app.yaml is used by app engine to do the same. Set environmental variables and run the app.
 
@@ -37,7 +39,7 @@ LDAP_PORT: "636"
 RADIUS_SECRET: A key file from G Suite LDAP client creation.
 DEBUG: "false" is default. set to "true" if you want verbose logging. You don't want verbose logging.
 
-6. Security, Firewall, Etc.
+7. Security, Firewall, Etc.
 
 If you are using a linux server, use a firewall. 
 
