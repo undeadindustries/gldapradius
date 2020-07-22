@@ -43,11 +43,11 @@ DEBUG: "false" is default. set to "true" if you want verbose logging. You don't 
 
 If you are using a linux server, use a firewall. 
 
-sudo ufw default deny incoming
-sudo ufw default allow outgoing
-sudo ufw allow ssh
-sudo ufw allow 1812
-sudo ufw enable
+sudo ufw default deny incoming  
+sudo ufw default allow outgoing  
+sudo ufw allow ssh  
+sudo ufw allow 1812  
+sudo ufw enable  
 
 The above commands closes all incoming but opens incoming ssh and radius ports to the whole internet.
 If you want to use ufw to only allow acces from certain IPs or subnets, [look here](https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands).
