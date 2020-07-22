@@ -1,7 +1,7 @@
 # GLDAPRadius
 
 Radius Server for Google's G Suite LDAP Directory
-It's very simple and should have a pretty small footprint. It is tested on Ubuntu 20.04 on Raspberry Pi 4 and Ubuntu 20.04 amd64. The intent of this app is to be used on Google Cloud's App Engine. However, there the VPN and WIFI hardware I use only allows IP addresses for radius servers. App Engine doesn't have static IP, only FQDN. Until that is fixed, the focus of this will be linux for linux and docker. 
+It's very simple and should have a pretty small footprint. It is tested on Ubuntu 20.04 on Raspberry Pi 4 and Ubuntu 20.04 amd64. The intent of this app is to be used on Google Cloud's App Engine. However, the VPN and WIFI hardware I use (Unifi) only allows IP addresses for radius servers. App Engine doesn't have static IP, only FQDN. Until that is fixed, the focus of this will be linux for linux and docker. 
 
 ## How To Use
 
