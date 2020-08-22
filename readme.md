@@ -66,6 +66,7 @@ Also probably a good idea to have DOS protection.
 * [Basic LDAP v3 functionality for the GO programming language.](github.com/go-ldap/ldap)
 * [a Go (golang) RADIUS client and server implementation](layeh.com/radius)
 * [Google G Suite](https://gsuite.google.com/)
+* [layeh.com/radius ](https://github.com/layeh/radius)
 
 
 ## License
