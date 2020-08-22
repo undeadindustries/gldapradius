@@ -36,7 +36,7 @@ CRT_FILENAME: crt file from G Suite LDAP client creation
 KEY_FILENAME: key file from G Suite LDAP client creation  
 LDAP_SERVER: "ldap.google.com"  
 LDAP_PORT: "636"  
-RADIUS_SECRET: A key file from G Suite LDAP client creation  
+RADIUS_SECRET: Long random string that you create. I use 30 or more characters.  
 DEBUG: "false" is default. set to "true" if you want verbose logging. You don't want verbose logging  
 
 7. Security, Firewall, Etc.
