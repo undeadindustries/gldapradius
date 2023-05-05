@@ -1,24 +1,23 @@
 # GLDAPRadius
 
 Radius Server for Google's G Suite LDAP Directory  
-It's very simple and should have a pretty small footprint. It is tested on Ubuntu 20.04 on Raspberry Pi 4 and Ubuntu 20.04 amd64. The intent of this app is to be used on Google Cloud's App Engine. However, the VPN and WIFI hardware I use (Unifi) only allows IP addresses for radius servers. App Engine doesn't have static IP, only FQDN. Until that is fixed, the focus of this will be linux and docker. 
+It's very simple and should have a pretty small footprint. It is tested on Ubuntu 20.04 on Raspberry Pi 4 and Ubuntu 22.04 amd64. The intent of this app is to be used on Google Cloud's Compute Engine or Cloud Run. 
+
+Because Google's LDAP doesn't expose the password hash, you MUST use PEAP as the authentcation mechanism. CHAP and MSCHAPv2 do no send the password. They assume the server knows the password. This is a huge annoyance from Google. They should either expose the password hash or create their own Radius-as-a-service. Contact your rep and let them know that!
+
+There is a Dockerfile here for Cloud Run. However I have only tested on Compute Engine.
 
 ## How To Use
 
-WAIT UNTIL THIS LINE IS GONE BEFORE USING! MORE TESTING IS REQUIRED!
-
-To use this radius server, you first need to have Google [G Suite Enterprise](https://support.google.com/a/answer/7284269?hl=en) or [Cloud Identity](https://cloud.google.com/identity). You must also follow [Googles steps](https://support.google.com/a/topic/9048334?hl=en&ref_topic=7556782) setup the LDAP directory.
+To use this radius server, you first need to have Google [Workspace Enterprise](https://support.google.com/a/answer/7284269?hl=en) or [Cloud Identity](https://cloud.google.com/identity). You must also follow [Googles steps](https://support.google.com/a/topic/9048334?hl=en&ref_topic=7556782) setup the LDAP directory.
 
 1. In linux, install git, golang and ufw.
 
-2. Get the dependencies
-go get github.com/undeadindustries/gldapradius
-go get github.com/go-ldap/ldap
-go get layeh.com/radius
+2. Get the dependencies:
+go mod tidy
 
 3. Copy the example files to their correct 
-cp app.example.yaml app.yaml
-cp build.example.sh
+cp build.example.sh build.sh
 
 4. Copy the .crt and .key file you got from Google while adding the LDAP client.
 
@@ -41,7 +40,7 @@ DEBUG: "false" is default. set to "true" if you want verbose logging. You don't 
 
 7. Security, Firewall, Etc.
 
-If you are using a linux server, use a firewall. 
+If you are using a linux server, use a firewall.
 
 sudo ufw default deny incoming  
 sudo ufw default allow outgoing  
@@ -64,7 +63,7 @@ Also probably a good idea to have DOS protection.
 ## Built With
 
 * [Basic LDAP v3 functionality for the GO programming language.](github.com/go-ldap/ldap)
-* [Google G Suite](https://gsuite.google.com/)
+* [Google Workspace](https://gsuite.google.com/)
 * [layeh.com/radius ](https://github.com/layeh/radius)
 
 
